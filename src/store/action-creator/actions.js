@@ -10,7 +10,7 @@ export const sendAdminData = (data) => {
 export const isAuthenticatedData = (is) => {
   return (dispatch) => {
     dispatch({
-      type: "firebaseLoggined",
+      type: "firebaseLoggedIn",
       payLoad: is,
     });
   };

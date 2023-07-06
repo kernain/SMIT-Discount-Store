@@ -120,6 +120,7 @@ const Index = () => {
 
               <div className="input-group">
                 <select id="productCategory" className='form-control mb-2 border-0'>
+                <option selected disabled>Select a Category</option>
                   {categories.map((item, index) => {
                     return <option key={index} value={item.categoryName}>{item.categoryName}</option>;
                   })}

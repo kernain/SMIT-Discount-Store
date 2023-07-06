@@ -1,15 +1,15 @@
 import { combineReducers } from "redux";
 import authInfo from "./authInfo";
-import isLoggined from "./isAuthenticated";
+import isLoggedIn from "./isAuthenticated";
 import admins from "./admins";
 import isAdmin from "./isAdmin";
 import cartItems from "./cart"
 
 const reducers = combineReducers({
   myAuth: authInfo,
-  isAuthLoggined: isLoggined,
+  isAuthLoggedIn: isLoggedIn,
   myAdmins: admins,
-  isAdminLoggined: isAdmin,
+  isAdminLoggedIn: isAdmin,
   cartItems: cartItems
 });
 

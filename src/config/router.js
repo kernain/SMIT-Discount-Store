@@ -3,7 +3,7 @@ import Signup from "./../pages/Signup";
 import Login from "./../pages/Login";
 import UserHome from "./../pages/UserHome";
 import AdminProductUpload from "../pages/AdminProductUpload";
-import AdminHome from "./../pages/AdminHome";
+import AdminHome from "./../pages/adminHome";
 import AdminOrders from "../pages/AdminOrders";
 import AccountSettings from "../pages/AccountSettings";
 import UserSetting from "../pages/UserSetting/index"
@@ -15,8 +15,8 @@ const Router = () => {
 
 
 
-  const isAuthenticated = useSelector(state => state.isAuthLoggined)
-  const isAdminLoggined = useSelector(state => state.isAdminLoggined)
+  const isAuthenticated = useSelector(state => state.isAuthLoggedIn)
+  const isAdminLoggedIn = useSelector(state => state.isAdminLoggedIn)
 
 
 
@@ -39,19 +39,19 @@ const Router = () => {
     },
     {
       path: "/adminProductUpload",
-      element: isAdminLoggined ? <AdminProductUpload /> : <Login />,
+      element: isAdminLoggedIn ? <AdminProductUpload /> : <Login />,
     },
     {
       path: "/adminHome",
-      element: isAdminLoggined ? <AdminHome /> : <Login />,
+      element: isAdminLoggedIn ? <AdminHome /> : <Login />,
     },
     {
       path: "/adminOrders",
-      element: isAdminLoggined ? <AdminOrders /> : <Login />,
+      element: isAdminLoggedIn ? <AdminOrders /> : <Login />,
     },
     {
       path: "/adminAccountSettings",
-      element: isAdminLoggined ? <AccountSettings /> : <Login />,
+      element: isAdminLoggedIn ? <AccountSettings /> : <Login />,
     },
     {
       path: "/userSetting",

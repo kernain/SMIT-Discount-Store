@@ -3,8 +3,7 @@ import "./style.css";
 import swal from "sweetalert";
 import Swal from "sweetalert2";
 
-import VisibilityIcon from '@mui/icons-material/Visibility';
-
+import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import {
   createUserWithEmailAndPassword,
@@ -27,22 +26,37 @@ const Index = () => {
     bindActionCreators(actionCreators, dispatch);
 
   const admins = useSelector((state) => state.myAdmins);
-  const [adminNameToSend, setAdminNameToSend] = useState('')
-  let [whereToNavigate, setWhereToNavigate] = useState("");
+  const [adminNameToSend, setAdminNameToSend] = useState("");
+  const [whereToNavigate, setWhereToNavigate] = useState("");
+ 
 
   const isAdminHandler = (e) => {
-    // console.log(e.target.value)
-    for (let item of admins) {
-      if (item.email === e.target.value) {
-        setAdminNameToSend(item.fullName)
-        admintExists(true);
-        setWhereToNavigate("/adminHome");
-      } else {
-        setAdminNameToSend("")
-        setWhereToNavigate("/userHome");
+    
+    if (admins.length) {
+      for (let item of admins) {
+        if (item.email === e.target.value) {
+          setAdminNameToSend(item.fullName);
+          admintExists(true);
+          
+          setWhereToNavigate("/adminHome");
+          
+        } else {
+          setAdminNameToSend("");
+          setWhereToNavigate("/userHome");
+          
+          
+        }
       }
+    } else {
+   
+      setAdminNameToSend("");
+      setWhereToNavigate("/userHome");
+      
+      
     }
   };
+
+  
 
   const login = async () => {
     try {
@@ -50,32 +64,27 @@ const Index = () => {
       const password = document.getElementById("psw").value;
       const userCred = await signInWithEmailAndPassword(auth, email, password);
 
-      swal("Congrats!", "Loggined Successfully!", "success");
-
+      swal("Congrats!", "Logged In Successfully!", "success");
+      console.log(admins);
 
       // authData(userCred);
-      if (whereToNavigate === '/adminHome') {
-        admintExists(true)
-        authData({ ...userCred, adminName: adminNameToSend })
+      if (whereToNavigate === "/adminHome") {
+        admintExists(true);
+        authData({ ...userCred, adminName: adminNameToSend });
       } else {
-        authData({ ...userCred })
+        authData({ ...userCred });
 
-        isAuthenticatedData(true)
-
+        isAuthenticatedData(true);
       }
-
 
       navigate(whereToNavigate);
       window.scrollTo(0, 0);
     } catch (e) {
-
       swal("error!", e.message, "error");
-
-
     }
   };
 
-  const test = useSelector(state => state.isAuthLoggined)
+  const test = useSelector((state) => state.isAuthLoggedned);
   // console.log(test)
 
   return (
@@ -101,7 +110,7 @@ const Index = () => {
             className="signupInp"
             label="Password"
             variant="standard"
-            type={'password'}
+            type={"password"}
           />
         </div>
 

@@ -1,7 +1,7 @@
-const isLoggined = false;
+const isLoggedIn = false;
 
-const reducers = (state = isLoggined, action) => {
-  if (action.type === "firebaseLoggined") {
+const reducers = (state = isLoggedIn, action) => {
+  if (action.type === "firebaseLoggedIn") {
     return action.payLoad;
   } else {
     return state;

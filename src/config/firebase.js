@@ -23,13 +23,12 @@ import {
 } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyD2tsAGYEZbZeNgt6aFpGJixMPCmF4WF4M",
-  authDomain: "smit-discount-store-4f53d.firebaseapp.com",
-  projectId: "smit-discount-store-4f53d",
-  storageBucket: "smit-discount-store-4f53d.appspot.com",
-  messagingSenderId: "588962328355",
-  appId: "1:588962328355:web:cb3ae9739061461fc16696",
-  measurementId: "G-Z4J7NEPQ2L",
+  apiKey: "AIzaSyBFfKoStoAA-4Uf3D5yvbNfkXoS0FUd84I",
+  authDomain: "smit-store-fi.firebaseapp.com",
+  projectId: "smit-store-fi",
+  storageBucket: "smit-store-fi.appspot.com",
+  messagingSenderId: "974679736605",
+  appId: "1:974679736605:web:9988dd3a252a257726e1f4"
 };
 
 const app = initializeApp(firebaseConfig);

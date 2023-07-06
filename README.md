@@ -13,6 +13,6 @@ Admin can Change Status of order e.g : deliver reject or accept.
  
 
 
-Live Project Url : https://smit-discount-store-mrz.netlify.app/
+Live Project Url : https://smit-store-by-syed-karnain.netlify.app/
 
 
